@@ -1,0 +1,18 @@
+[package]
+name = "zkopa-policy"
+version = "0.0.0"
+description = "Lowers policies to the circuit IR"
+edition.workspace = true
+license.workspace = true
+publish.workspace = true
+
+[lib]
+path = "src/zkopa_policy.rs"
+doctest = false
+
+[dependencies]
+thiserror.workspace = true
+zkopa-ir.workspace = true
+
+[lints]
+workspace = true

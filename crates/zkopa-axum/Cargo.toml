@@ -1,0 +1,32 @@
+[package]
+name = "zkopa-axum"
+version = "0.0.0"
+description = "Lets axum handlers ask the kernel for a decision"
+edition.workspace = true
+license.workspace = true
+publish.workspace = true
+
+[lib]
+path = "src/zkopa_axum.rs"
+doctest = false
+
+[dependencies]
+axum.workspace = true
+base64.workspace = true
+thiserror.workspace = true
+tokio = { workspace = true, features = ["rt"] }
+zkopa-kernel.workspace = true
+
+[dev-dependencies]
+ark-std.workspace = true
+axum = { workspace = true, features = ["json"] }
+ed25519-dalek.workspace = true
+serde.workspace = true
+tokio = { workspace = true, features = ["macros"] }
+tower = { workspace = true, features = ["util"] }
+zkopa-ir.workspace = true
+zkopa-policy.workspace = true
+zkopa-prove.workspace = true
+
+[lints]
+workspace = true

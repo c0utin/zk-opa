@@ -1,0 +1,17 @@
+[package]
+name = "zkopa-ir"
+version = "0.0.0"
+description = "The circuit IR, as plain data"
+edition.workspace = true
+license.workspace = true
+publish.workspace = true
+
+[lib]
+path = "src/zkopa_ir.rs"
+doctest = false
+
+[dependencies]
+thiserror.workspace = true
+
+[lints]
+workspace = true

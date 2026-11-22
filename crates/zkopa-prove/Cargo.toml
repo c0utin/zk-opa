@@ -1,0 +1,38 @@
+[package]
+name = "zkopa-prove"
+version = "0.0.0"
+description = "Builds circuits from the IR and makes proofs"
+edition.workspace = true
+license.workspace = true
+publish.workspace = true
+
+[lib]
+path = "src/zkopa_prove.rs"
+doctest = false
+
+[features]
+default = ["parallel"]
+# Proves on every core with rayon. Turn it off for WebAssembly.
+parallel = ["ark-groth16/parallel", "ark-r1cs-std/parallel", "ark-ec/parallel", "ark-ff/parallel"]
+
+[dependencies]
+ark-bn254.workspace = true
+ark-crypto-primitives = { workspace = true, features = ["sponge", "constraints"] }
+ark-ec.workspace = true
+ark-ed-on-bn254 = { workspace = true, features = ["r1cs"] }
+ark-ff.workspace = true
+ark-groth16.workspace = true
+ark-r1cs-std.workspace = true
+ark-relations.workspace = true
+ark-serialize.workspace = true
+ark-std.workspace = true
+thiserror.workspace = true
+zkopa-ir.workspace = true
+zkopa-kernel.workspace = true
+
+[dev-dependencies]
+ed25519-dalek.workspace = true
+zkopa-policy.workspace = true
+
+[lints]
+workspace = true

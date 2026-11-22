@@ -1,0 +1,29 @@
+[package]
+name = "zkopa-cli"
+version = "0.0.0"
+description = "The zkopa command"
+edition.workspace = true
+license.workspace = true
+publish.workspace = true
+
+[[bin]]
+name = "zkopa"
+path = "src/main.rs"
+
+[dependencies]
+anyhow.workspace = true
+ark-ff.workspace = true
+ark-serialize.workspace = true
+ed25519-dalek.workspace = true
+rand.workspace = true
+serde_json.workspace = true
+zkopa-ir.workspace = true
+zkopa-kernel.workspace = true
+zkopa-policy.workspace = true
+zkopa-prove.workspace = true
+
+[dev-dependencies]
+tempfile.workspace = true
+
+[lints]
+workspace = true
